@@ -10,6 +10,11 @@ plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.8.10"
 
+    // JavaFX gradle plugin. Source:
+    // https://openjfx.io/openjfx-docs/#gradle
+    // https://github.com/openjfx/javafx-gradle-plugin
+    id("org.openjfx.javafxplugin") version "0.0.14"
+
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
@@ -38,4 +43,10 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+javafx {
+    version = "20"
+    modules("javafx.controls", "javafx.fxml")
+    // configuration = "compileOnly" // Native dependencies to possible avoid
 }
