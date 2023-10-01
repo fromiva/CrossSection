@@ -37,7 +37,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.github.fromiva.csection.AppKt")
+    mainClass.set("com.github.fromiva.csection.CrossSectionMainKt")
 }
 
 tasks.named<Test>("test") {
